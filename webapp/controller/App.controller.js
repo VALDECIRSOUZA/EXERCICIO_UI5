@@ -5,7 +5,9 @@ sap.ui.define(
 
         return Controller.extend('ui5.product.list.controller.App', {
             onPressCreateNewProduct: function () {
-                MessageToast.show('New product created', {
+
+                var oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle()
+                MessageToast.show(oBundle.getText("messageProductCreated", ["Mackbook"]), {
                     at: 'center top'
                 })
             }
